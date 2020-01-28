@@ -38,7 +38,7 @@ if [ "$T_ACME_HOME" != "" ]; then
 fi
 
 # CERT_HOME
-read -p "Certificate path ($CERT_HOME): " T_ACME_HOME
+read -p "Certificate path ($CERT_HOME): " T_CERT_HOME
 if [ "$T_CERT_HOME" != "" ]; then
   CERT_HOME=$T_CERT_HOME
 fi
