@@ -32,7 +32,7 @@ doChallenge () {
 EOM
   REQ=$(echo $DOCUMENT | curl -X POST -T - $URL | node $(pwd)/edit-zone.js)
   if [ -z "$REQ" ]; then
-    echo "could not generate request for $DOMAIN, reason $?"
+    echo "could not generate request for $DOMAIN"
   else
     echo $REQ | curl -X POST -T - $URL
   fi
