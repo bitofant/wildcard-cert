@@ -22,3 +22,5 @@ $ACME_HOME/acme.sh --issue --dns --home "$CERT_HOME"$ACME_DOMAINS \
 
 $ACME_HOME/acme.sh --renew --home "$CERT_HOME"$ACME_DOMAINS \
   --yes-I-know-dns-manual-mode-enough-go-ahead-please
+
+$ACME_HOME/acme.sh --remove$ACME_DOMAINS
