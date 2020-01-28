@@ -3,6 +3,7 @@ var fs = require('fs');
 const CONFIG = {
     user: process.env.USER,
     password: process.env.PASSWORD,
+    subdomain: process.env.SUBDOMAIN ? '.'+process.env.SUBDOMAIN : '',
     txtRecord: '_acme-challenge',
     challenge: process.env.CHALLENGE
 };
@@ -18,7 +19,7 @@ if (zoneEnd < 8) process.exit(3);
 
 data = data.substr(zonePos, zoneEnd - zonePos);
 
-var ocPos = data.indexOf(`<name>${CONFIG.txtRecord}</`);
+var ocPos = data.indexOf(`<name>${CONFIG.txtRecord + CONFIG.subdomain}</`);
 if (ocPos < 1) process.exit(4);
 
 var valPos = data.indexOf('<value>', ocPos) + 7;

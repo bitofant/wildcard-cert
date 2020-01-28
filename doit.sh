@@ -3,8 +3,15 @@
 URL=https://gateway.autodns.com/
 
 doChallenge () {
-  DOMAIN=$1
+  echo "$1 $2"
+  export DOMAIN=$1
   export CHALLENGE=$2
+  if [ "$(echo $DOMAIN | cut -d'.' -f 3)" == "" ]; then
+    export SUDBOMAIN=""
+  else
+    export DOMAIN=$(echo $DOMAIN | cut -d'.' -f 2,3)
+    export SUBDOMAIN=$(echo $DOMAIN | cut -d'.' -f 1)
+  fi
   read -r -d '' DOCUMENT << EOM
 <?xml version="1.0" encoding="utf-8"?>
 <request>
