@@ -32,13 +32,13 @@ fi
 echo ""
 
 # ACME_HOME
-read -sp "Acme path ($ACME_HOME): " T_ACME_HOME
+read -p "Acme path ($ACME_HOME): " T_ACME_HOME
 if [ "$T_ACME_HOME" != "" ]; then
   ACME_HOME=$T_ACME_HOME
 fi
 
 # CERT_HOME
-read -sp "Certificate path ($CERT_HOME): " T_ACME_HOME
+read -p "Certificate path ($CERT_HOME): " T_ACME_HOME
 if [ "$T_CERT_HOME" != "" ]; then
   CERT_HOME=$T_CERT_HOME
 fi
